@@ -1,0 +1,40 @@
+{
+  "name": "@wingmeng/nano-test",
+  "version": "0.0.1",
+  "description": "A minimalist JavaScript function testing library",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "unpkg": "./dist/index.umd.js",
+  "jsdelivr": "./dist/index.umd.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup && node scripts/build-umd.js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "test": "node test.js",
+    "prepublishOnly": "npm run build",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "test",
+    "testing",
+    "unit-test",
+    "minimalist"
+  ],
+  "author": "wingmeng",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.0.0"
+  }
+}
